@@ -1,25 +1,38 @@
-"use client"
-import Painel from "@/app/components/painel";
+function Componente() {
+  const lista = [
+
+{
+  nome: 'João',
+  idade: 30
+},
+{
+  nome: 'Maria',
+  idade: 25
+},
 
 
-export default function Home(){
-
-  function acao(){
-    alert("Clicado")
-  }
+  ]
 
   return (
     <>
-    <div className="flex items-center justify-center h-screen ">
-      <Painel titulo="Área do usuário" acao={acao}>
-        <p>Bem-vindo ao sistema! essep pedaço veio do children</p>
-      </Painel>
-      <Painel titulo="Área do usuário" acao={acao}>
-        <header className="bg-amber-600">
-          <h1>Nova descrição do card</h1>
-        </header>
-      </Painel>
-    </div>
+      <h1>Lista de nomes</h1>
+      <ul>
+        {lista.map((item, index) => (
+          <li key={index}> meu nome é {item.nome} e minha idade é {item.idade}</li>
+        ))}
+      </ul>
+    
+    
+    </>
+  )
+}
+
+
+export default function Home() {
+  return (
+    <>
+      <h1>Olá, mundo!</h1>
+      <Componente />
     </>
   )
 }
